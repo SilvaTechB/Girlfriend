@@ -234,6 +234,66 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        // Add event listener to couple timeline items
+document.querySelectorAll('.timeline-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+        console.log('Timeline item clicked');
+        // Add animation to timeline item
+        item.classList.add('animate');
+        setTimeout(function() {
+            item.classList.remove('animate');
+        }, 1000);
+    });
+});
+
+// Add event listener to playlist items
+document.querySelectorAll('.playlist li').forEach(function(item) {
+    item.addEventListener('click', function() {
+        console.log('Playlist item clicked');
+        // Play song
+        // You can add code here to play the song using an audio player library
+    });
+});
+
+// Add animation to love letter
+document.querySelector('.love-letter').addEventListener('mouseover', function() {
+    console.log('Love letter hovered');
+    // Add animation to love letter
+    document.querySelector('.love-letter').classList.add('animate');
+    setTimeout(function() {
+        document.querySelector('.love-letter').classList.remove('animate');
+    }, 1000);
+});
+
+// Add animation to heartbeat
+document.querySelector('.heartbeat').addEventListener('mouseover', function() {
+    console.log('Heartbeat hovered');
+    // Add animation to heartbeat
+    document.querySelector('.heartbeat').classList.add('animate');
+    setTimeout(function() {
+        document.querySelector('.heartbeat').classList.remove('animate');
+    }, 1000);
+});
+        // Add audio player library
+const Howler = require('howler');
+
+// Create an audio player instance
+const player = new Howler.Howler({
+  src: ['song1.mp3', 'song2.mp3', 'song3.mp3'],
+  autoplay: false,
+  loop: false,
+  volume: 0.5
+});
+
+// Add event listener to playlist items to play song
+document.querySelectorAll('.playlist li').forEach(function(item, index) {
+  item.addEventListener('click', function() {
+    console.log('Playlist item clicked');
+    // Play song
+    player.play(index);
+  });
+});
+    </script>
 </body>
 </html>
