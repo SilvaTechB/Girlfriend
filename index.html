@@ -183,6 +183,7 @@
         transform: scale(1);
     }
 }
+
     </styles>
 </head>
 <body>
@@ -234,7 +235,24 @@
             </div>
         </div>
     </div>
+    <div class="audio-player">
+  <div class="controls">
+    <div class="play-pause">&#9658;</div>
+    <div class="volume">
+      <div class="volume-handle"></div>
+    </div>
+  </div>
+</div>
     <script>
+        // Add event listener to wax seal
+document.querySelector('.wax-seal').addEventListener('click', function() {
+    document.querySelector('.letter-content').classList.toggle('show');
+});
+
+// Add animation to heartbeat
+document.querySelector('.heartbeat').addEventListener('animationiteration', function() {
+    console.log('Heartbeat animation iteration');
+});
         // Add event listener to couple timeline items
 document.querySelectorAll('.timeline-item').forEach(function(item) {
     item.addEventListener('click', function() {
