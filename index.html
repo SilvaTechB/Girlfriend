@@ -60,13 +60,129 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.heartbeat {
+.heartbeat::before {
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 48px;
-    color: #ff69b4
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.love-letter {
+    position: relative;
+    margin: 20px auto;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.wax-seal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.wax-seal::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.letter-content {
+    display: none;
+}
+
+.love-letter:hover .letter-content {
+    display: block;
+}
+
+.couple-timeline {
+    margin: 20px auto;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.timeline-item p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.playlist {
+    margin: 20px auto;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.playlist h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.playlist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.animate {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
     </styles>
 </head>
 <body>
@@ -76,19 +192,19 @@
             <p>Celebrating our love on National Girlfriend Day</p>
         </div>
         <div class="love-message">
-            <h2>Hey [Girlfriend's Name],</h2>
+            <h2>1 August 2024,</h2>
             <p>On this special day, National Girlfriend Day, I want to take a moment to express how grateful I am to have you by my side. You bring so much joy, love, and light into my life, and I feel incredibly lucky to have you as my partner.</p>
             <p>You're the sunshine that brightens up my day, the calm in every storm, and the safe haven where I can always be myself. I love the way you make me laugh, the way you always know how to make me feel better, and the way you support me in everything I do.</p>
             <p>I promise to always cherish, support, and love you, now and forever. Happy National Girlfriend Day, my love!</p>
             <p>With all my heart,</p>
-            <p>[Your Name]</p>
+            <p>two hearts</p>
         </div>
         <div class="interactive-elements">
             <div class="heartbeat"></div>
             <div class="love-letter">
                 <div class="wax-seal"></div>
                 <div class="letter-content">
-                    <p>My dearest [Girlfriend's Name],</p>
+                    <p>My dearest,</p>
                     <p>I love you more than words can express. You're the best thing that's ever happened to me, and I'm so grateful to have you by my side.</p>
                     <p>Forever yours,</p>
                     <p>[Your Name]</p>
@@ -96,8 +212,8 @@
             </div>
             <div class="couple-timeline">
                 <div class="timeline-item">
-                    <p>Our first date</p>
-                    <p>February 14, 2022</p>
+                    <p>tons </p>
+                    <p>we were once strangers 🥲 but now we are lovers</p>
                 </div>
                 <div class="timeline-item">
                     <p>Our first vacation together</p>
