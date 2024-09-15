@@ -1,353 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forever with You</title>
-    <link rel="stylesheet" href="styles.css">
-    <styles>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #f2f2f2;
+<style>
+body {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    width: 80%;
-    margin: 40px auto;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.header {
-    background-color: #ff69b4;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
+.page {
+  width: 8.5in;
+  height: 11in;
+  background-color: white;
+  border: 1px solid black;
+  padding: 1in;
+  box-sizing: border-box;
 }
 
-.header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+h1 {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
-.love-message {
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.love-message h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.love-message p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.interactive-elements {
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.heartbeat::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background-color: #ff69b4;
-    border-radius: 50%;
-    animation: heartbeat 1s infinite;
-}
-
-@keyframes heartbeat {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.love-letter {
-    position: relative;
-    margin: 20px auto;
-    width: 80%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.wax-seal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    background-color: #ff69b4;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.wax-seal::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 50%;
-}
-
-.letter-content {
-    display: none;
-}
-
-.love-letter:hover .letter-content {
-    display: block;
-}
-
-.couple-timeline {
-    margin: 20px auto;
-    width: 80%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.timeline-item {
-    margin-bottom: 20px;
-}
-
-.timeline-item p {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.playlist {
-    margin: 20px auto;
-    width: 80%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.playlist h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.playlist ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.playlist li {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-.animate {
-    animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-.audio-player {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+table {
+  border-collapse: collapse;
   width: 100%;
-  background-color: #fff;
-  padding: 10px;
-  border-top: 1px solid #ddd;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
-.audio-player .controls {
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.info-container {
+  margin-bottom: 20px;
+}
+
+.info-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 5px;
 }
 
-.audio-player .controls .play-pause {
-  font-size: 24px;
-  cursor: pointer;
+.info-label {
+  font-weight: bold;
 }
 
-.audio-player .controls .volume {
-  width: 50%;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 5px;
-  cursor: pointer;
+.info-value {
+  /* ... */
 }
 
-.audio-player .controls .volume .volume-handle {
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
+.key-grading-container {
+  margin-bottom: 20px;
 }
-    </styles>
+
+.key-grading-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.key-grading-table th,
+.key-grading-table td {
+  text-align: left;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.key-grading-table th {
+  background-color: #f2f2f2;
+}
+
+.other-keys-container {
+  margin-bottom: 20px;
+}
+
+.other-keys-list {
+  list-style: none;
+  padding: 0;
+}
+
+.other-keys-list li {
+  margin-bottom: 5px;
+}
+
+.other-keys-list li span {
+  font-weight: bold;
+}
+
+.signature-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.signature-label {
+  font-weight: bold;
+}
+
+.signature-input {
+  width: 150px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.date-input {
+  width: 100px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Forever with You</h1>
-            <p>Celebrating our love on National Girlfriend Day</p>
-        </div>
-        <div class="love-message">
-            <h2>1 August 2024,</h2>
-            <p>On this special day, National Girlfriend Day, I want to take a moment to express how grateful I am to have you by my side. You bring so much joy, love, and light into my life, and I feel incredibly lucky to have you as my partner.</p>
-            <p>You're the sunshine that brightens up my day, the calm in every storm, and the safe haven where I can always be myself. I love the way you make me laugh, the way you always know how to make me feel better, and the way you support me in everything I do.</p>
-            <p>I promise to always cherish, support, and love you, now and forever. Happy National Girlfriend Day, my love!</p>
-            <p>With all my heart,</p>
-            <p>two hearts</p>
-        </div>
-        <div class="interactive-elements">
-            <div class="heartbeat"></div>
-            <div class="love-letter">
-                <div class="wax-seal"></div>
-                <div class="letter-content">
-                    <p>My dearest,</p>
-                    <p>I love you more than words can express. You're the best thing that's ever happened to me, and I'm so grateful to have you by my side.</p>
-                    <p>Forever yours,</p>
-                    <p>[Your Name]</p>
-                </div>
-            </div>
-            <div class="couple-timeline">
-                <div class="timeline-item">
-                    <p>tons </p>
-                    <p>we were once strangers 🥲 but now we are lovers</p>
-                </div>
-                <div class="timeline-item">
-                    <p>Our first vacation together</p>
-                    <p>June 15, 2022</p>
-                </div>
-                <div class="timeline-item">
-                    <p>Our first anniversary</p>
-                    <p>February 14, 2023</p>
-                </div>
-            </div>
-            <div class="playlist">
-                <h2>Our Favorite Songs</h2>
-                <ul>
-                    <li>Perfect by Ed Sheeran</li>
-                    <li>I Choose You by Sara Bareilles</li>
-                    <li>Landslide by Fleetwood Mac</li>
-                </ul>
-            </div>
-        </div>
+<div class="container">
+  <div class="page">
+    <h1>MASINDE MULIRO UNIVERSITY OF SCIENCE AND TECHNOLOGY</h1>
+    <div class="image-container">
+      <img src="./SEDU CLASS OF 2023-2027 20240826_080521.jpg" alt="MMUST Logo">
     </div>
-    <div class="audio-player">
-  <div class="controls">
-    <div class="play-pause">&#9658;</div>
-    <div class="volume">
-      <div class="volume-handle"></div>
+    <div class="info-container">
+      <div class="info-row">
+        <span class="info-label">P.O. BOX:</span>
+        <span class="info-value">190-50100 KAKAMEGA,</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">TEL:</span>
+        <span class="info-value">+057-2505222/3,0702597360, FAX: +056-30153,</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Email:</span>
+        <span class="info-value">info@mmust.ac.ke, web: www.mmust.ac.ke,</span>
+      </div>
+    </div>
+    <h2>OFFICE OF THE REGISTRAR - ACADEMICS</h2>
+    <h3>Provisional Transcripts / Result Slip</h3>
+    <br>
+    <div class="info-container">
+      <div class="info-row">
+        <span class="info-label">STUDENT NAME:</span>
+        <span class="info-value">SYLIVANUS MEMBA MOMANYI</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">PROGRAMME:</span>
+        <span class="info-value">BACHELOR OF EDUCATION (ARTS)</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">DEPARTMENT:</span>
+        <span class="info-value">EDUCATION ARTS</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">SCHOOL/FACULTY:</span>
+        <span class="info-value">SCHOOL OF EDUCATION(SEDU)</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">REG NO:</span>
+        <span class="info-value">EDA/B/01-01089/2023</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">ADMISSION YEAR:</span>
+        <span class="info-value">2023</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">YEAR OF STUDY:</span>
+        <span class="info-value">YEAR 1</span>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>UNIT CODE</th>
+          <th>UNIT TITLE</th>
+          <th>HOURS</th>
+          <th>GRADE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ENG 111</td>
+          <td>INTRODUCTION TO LANGUANGE</td>
+          <td>42</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>MMU 121</td>
+          <td>COMMUNICATION SKILLS</td>
+          <td>42</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>EPS 121</td>
+          <td>INTRODUCTION TO SPECIAL NEEDS EDUCATION</td>
+          <td>42</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>ESM 121</td>
+          <td>QUANTITIVE SKILLS II</td>
+          <td>42</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>ESM 111</td>
+          <td>QUANTITATIVE SKILLS 1</td>
+          <td>42</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>ENG 121</td>
+          <td>INTRODUCTION TO LAN-GUAGE AND LINGUISTICS IN ENGLISH</td>
+          <td>42</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>EPM 111</td>
+          <td>INTRODUCTION TO TEACHER PROFESSIONAL DEVELOPMENT</td>
+          <td>42</td>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>LIT 112</td>
+          <td>INTRODUCTION TO LITERATURE ANALYSIS</td>
+          <td>42</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>LIT 111</td>
+          <td>LITERATURE AND ITS COMPONENTS/td>
+          <td>42</td>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>MMU 111</td>
+          <td>FUNDAMENTALS OF DIGITAL COMPETENCY</td>
+          <td>42</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>EDF 111</td>
+          <td>HISTORY OF EDUCATION</td>
+          <td>42</td>
+          <td>B</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="key-grading-container">
+      <h4>Key Grading System</h4>
+      <table class="key-grading-table">
+        <thead>
+          <tr>
+            <th>Grade Points</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>70-100</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>60-69</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>50-59</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <td>40-49</td>
+            <td>D</td>
+          </tr>
+          <tr>
+            <td>0-39</td>
+            <td>E</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="other-keys-container">
+      <h4>Other Keys</h4>
+      <ul class="other-keys-list">
+        <li><span>#</span> Symbol Names</li>
+        <li><span>*</span> Audited Unit</li>
+        <li><span>**</span> Supplementary</li>
+        <li><span>***</span> Retake</li>
+        <li><span>-</span> Missing Marks</li>
+        <li><span>CT</span> Credit Transfer</li>
+        <li><span>I</span> Incomplete</li>
+        <li><span>NA</span> Mark Type Not Applicable</li>
+      </ul>
+    </div>
+    <div class="signature-container">
+      <span class="signature-label">HOD:</span>
+      <input class="signature-input" type="text">
+      <span class="signature-label">Sign</span>
+      <input class="signature-input" type="text">
+      <span class="signature-label">Date</span>
+      <input class="date-input" type="text">
+    </div>
+    <div class="signature-container">
+      <span class="signature-label">Registrar:</span>
+      <input class="signature-input" type="text">
+      <span class="signature-label">Sign</span>
+      <input class="signature-input" type="text">
+      <span class="signature-label">Date</span>
+      <input class="date-input" type="text">
     </div>
   </div>
 </div>
-    <script>
-        // Add event listener to wax seal
-document.querySelector('.wax-seal').addEventListener('click', function() {
-    document.querySelector('.letter-content').classList.toggle('show');
-});
-
-// Add animation to heartbeat
-document.querySelector('.heartbeat').addEventListener('animationiteration', function() {
-    console.log('Heartbeat animation iteration');
-});
-        // Add event listener to couple timeline items
-document.querySelectorAll('.timeline-item').forEach(function(item) {
-    item.addEventListener('click', function() {
-        console.log('Timeline item clicked');
-        // Add animation to timeline item
-        item.classList.add('animate');
-        setTimeout(function() {
-            item.classList.remove('animate');
-        }, 1000);
-    });
-});
-
-// Add event listener to playlist items
-document.querySelectorAll('.playlist li').forEach(function(item) {
-    item.addEventListener('click', function() {
-        console.log('Playlist item clicked');
-        // Play song
-        // You can add code here to play the song using an audio player library
-    });
-});
-
-// Add animation to love letter
-document.querySelector('.love-letter').addEventListener('mouseover', function() {
-    console.log('Love letter hovered');
-    // Add animation to love letter
-    document.querySelector('.love-letter').classList.add('animate');
-    setTimeout(function() {
-        document.querySelector('.love-letter').classList.remove('animate');
-    }, 1000);
-});
-
-// Add animation to heartbeat
-document.querySelector('.heartbeat').addEventListener('mouseover', function() {
-    console.log('Heartbeat hovered');
-    // Add animation to heartbeat
-    document.querySelector('.heartbeat').classList.add('animate');
-    setTimeout(function() {
-        document.querySelector('.heartbeat').classList.remove('animate');
-    }, 1000);
-});
-        // Add audio player library
-const Howler = require('howler');
-
-// Create an audio player instance
-const player = new Howler.Howler({
-  src: ['song1.mp3', 'song2.mp3', 'song3.mp3'],
-  autoplay: false,
-  loop: false,
-  volume: 0.5
-});
-
-// Add event listener to playlist items to play song
-document.querySelectorAll('.playlist li').forEach(function(item, index) {
-  item.addEventListener('click', function() {
-    console.log('Playlist item clicked');
-    // Play song
-    player.play(index);
-  });
-});
-    </script>
 </body>
 </html>
